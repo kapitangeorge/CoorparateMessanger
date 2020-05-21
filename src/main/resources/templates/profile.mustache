@@ -1,0 +1,61 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="style/">
+</head>
+<body>
+  <div>
+    <form action="/logout" method="post">
+      <input type="submit" value="Выйти"/>
+      <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+    </form>
+  </div>
+  <div class="avatar">
+
+  </div>
+  <div class="data">
+  <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Фамилия</th>
+                <th>Должность</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{user.first_name}}</th>
+                <th>{{user.second_name}}</th>
+                <th>{{user.last_name}}</th>
+                <th>{{user.position}}</th>
+            </tr>
+        </tbody>
+  </table>
+
+  </div>
+
+
+
+  <form action="/chat" method="get">
+    <input type="submit" value="Чаты"/>
+
+  </form>
+  <form action="/projects" method="get">
+    <input type="submit" value="Проекты"/>
+
+  </form>
+
+
+   <form action="/allUsers" method="get">
+    <input type="submit" value="Все пользователи"/>
+
+  </form>
+
+  <form action="/edit" method="get">
+    <input type="submit" value="Настройки пользователя"/>
+     </form>
+    <a href = "/delete">Удалить</a>
+</body>
+
+</html>

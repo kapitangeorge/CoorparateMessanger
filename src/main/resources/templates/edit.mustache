@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+<div>
+            <form action="/logout" method="post">
+                <input type="submit" value="Выйти"/>
+                <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+            </form>
+</div>
+        <a href = "/profile">Назад </a>
+        <form  method = "post">
+            <input type = "text" name = "username" value = {{user.username}}>
+            <input type = "text" name = "first_name" value = {{user.first_name}}>
+            <input type = "text" name = "second_name" value = {{user.second_name}}>
+            <input type = "text" name = "last_name" value = {{user.last_name}}>
+            <input type = "text" name = "position" value = {{user.position}}>
+            <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+            <button type = "submit"> Изменить </button>
+        </form>
+</body>
+</html>

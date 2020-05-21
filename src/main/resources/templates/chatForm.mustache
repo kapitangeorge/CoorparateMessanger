@@ -1,0 +1,28 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+<div>
+            <form action="/logout" method="post">
+                <input type="submit" value="Выйти"/>
+                <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+            </form>
+</div>
+<a href = "/chat">Назад</a>
+<div>Список сообщений</div>
+    {{#messages}}
+                <p>
+                    <span>{{text}} </span>
+                    <strong>{{author.getUsername}}</strong>
+                </p>
+    {{/messages}}
+
+    <form method = "post">
+                    <input type = "text" name = "text" placeholder = "Введите сообщение">
+                    <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+                    <button type = "submit"> Добавить</button>
+    </form>
+
+</body>
+</html>

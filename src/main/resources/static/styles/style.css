@@ -1,0 +1,61 @@
+html{
+  width: 720px;
+  height: 480px;
+  background: white;
+  margin: 0px;
+}
+body{
+  background: orange;
+  margin: 0px;
+  border: 3px solid black;
+}
+.logout {
+  height: 40px;
+}
+.logout form{
+  height: inherit;
+}
+.logout input{
+  float: right;
+  height:inherit;
+}
+
+
+.search{
+  height: 70px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  margin-left: 200px;
+}
+.search div{
+  height: 30px;
+  margin-left: 50px;
+}
+.search form{
+  height: 40px;
+}
+
+.messeges p{
+  width: 100%;
+}
+
+.messeges div{
+  margin-left: 250px;
+  margin-bottom: 10px;
+}
+
+.messeges strong{
+  float: right;
+}
+
+
+
+.wrap{
+  margin-left: 8px;
+}
+
+.write{
+  margin-top: 20px;
+  margin-left: 100px;
+}

@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <a href = "/projects/{{id}}">Назад </a>
+        <form method = "post">
+        <input type = "text" name = "stage" value = {{task.stage}}>
+        <input type = "text" name = "deadline" value = {{task.deadline}}>
+        <input type = "text" name = "description" value = {{task.description}}>
+        <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+        <button type = "submit"> Изменить </button>
+        </form>
+    </body>
+</html>

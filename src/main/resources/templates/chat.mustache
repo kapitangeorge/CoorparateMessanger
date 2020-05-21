@@ -1,0 +1,24 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+        <a href = "/profile">Назад</a>
+        <div>Список Чатов</div>
+        {{#chat}}
+            <div\>
+                <span>Название Чата: </span> <span>{{name}}</span>
+                <span>Создатель: </span> <span>{{creator.getUsername}}</span>
+                <a href="/chat/{{id}}">Открыть</a>
+            </div>
+        {{/chat}}
+
+        <div>Создать новый чат</div>
+
+         <form method = "post" >
+                         <input type = "text" name="name">
+                         <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+                         <button type = "submit">Создать</button>
+         </form>
+</body>
+</html>

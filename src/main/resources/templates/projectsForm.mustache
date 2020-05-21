@@ -1,0 +1,62 @@
+<html>
+<head>
+</head>
+<body>
+<div>
+            <form action="/logout" method="post">
+                <input type="submit" value="Sign Out"/>
+                <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+            </form>
+</div>
+<a href = "/projects">Назад</a>
+    {{#project}}
+                <p>
+                    <strong>Название проекта: </strong> <span>{{name}} </span>
+                </p>
+                <p>
+                    <strong>Ответственный за проект: </strong> <span>{{userCreator.getUsername}} </span>
+                </p>
+                <p>
+                    <strong>Сроки выполнения проекта: </strong> <span>{{deadline}} </span>
+                </p>
+                <p>
+                     <strong>Описание проекта: </strong> <span>{{description}} </span>
+                </p>
+                <p>
+                    <form action="/editProject/{{id}}" method="get">
+                        <input type="submit" value="Редактировать"/>
+                    </form>
+                </p>
+    {{/project}}
+    <form action="/deleteProject/{{project.id}}" method="get">
+           <input type="submit" value="Удалить"/>
+           </form>
+
+
+    <div>Список задач</div>
+    {{#tasks}}
+    <p>
+    <strong>Дедлайн: </strong> <span>{{deadline}}</span>
+    </p>
+    <p>
+    <strong>Описание: </strong> <span>{{description}}</span>
+    </p>
+    <p>
+    <strong>Этап: </strong> <span>{{stage}}</span>
+    </p>
+    <p>
+    <form action="/tasks/{{id}}" method="get">
+    <input type="submit" value="Изменить"/>
+    </form>
+    <form action="/deleteTask/{{id}}" method="get">
+       <input type="submit" value="Удалить"/>
+       </form>
+    </p>
+    </form>
+    {{/tasks}}
+<form action="/addTask/{{id}}" method = "get" >
+    <button type = "submit">Добавление задачи</button>
+    </form>
+
+</body>
+</html>

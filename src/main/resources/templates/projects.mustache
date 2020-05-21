@@ -1,0 +1,32 @@
+<html>
+<head>
+
+</head>
+<body>
+        <a href = "/profile">Назад</a>
+        <div>Список Проектов</div>
+        {{#project}}
+            <div\>
+            <p>
+                <strong>Название проекта: </strong> <span>{{name}}</span>
+                <strong>Создатель: </strong> <span>{{userCreator.getUsername}}</span>
+            </p>
+            <p>
+                <strong>Дедлайн: </strong> <span>{{deadline}}</span>
+                <strong>Описание: </strong> <span>{{description}}</span>
+                <a href="/projects/{{id}}">Открыть</a>
+            </p>
+            </div>
+        {{/project}}
+
+        <div>Создать новый проект</div>
+
+         <form method = "post" >
+                         <input type = "text" name="name" value = "Имя">
+                         <input type = "text" name="deadline" value = "Дедлайн">
+                         <input type = "text" name="description" value = "Описание">
+                         <input type ="hidden" name = "_csrf" value = "{{_csrf.token}}" />
+                         <button type = "submit">Создать</button>
+         </form>
+</body>
+</html>
